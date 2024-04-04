@@ -20,7 +20,7 @@
 
 ### 启动程序
 
-1. 克隆仓库到本地：`git clone https://github.com/kawika-git/WeChat-Video-Dewartermark.git`
+1. 克隆仓库到本地：`git clone https://github.com/WeChatAPIs/WeChat-Video-Dewartermark.git`
 2. 进入项目目录：`cd WeChat-Video-Dewartermark`
 3. 创建虚拟环境并激活：`python -m venv venv`，然后 `venv\Scripts\activate` (Windows) 或 `source venv/bin/activate` (Unix/macOS)
 4. 安装依赖：`pip install -r requirements.txt`
