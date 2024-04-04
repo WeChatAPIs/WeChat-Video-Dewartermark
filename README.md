@@ -29,7 +29,8 @@
 2. 进入项目目录：`cd WeChat-Video-Dewartermark`
 3. 创建虚拟环境并激活：`python -m venv venv`，然后 `venv\Scripts\activate` (Windows) 或 `source venv/bin/activate` (Unix/macOS)
 4. 安装依赖：`pip install -r requirements.txt`
-5. 运行程序：`python app.py`
+5. 修改配置文件：`.env` 文件中填写相关配置信息
+6. 运行程序：`python app.py`
 
 ## 依赖 📦
 
@@ -39,8 +40,10 @@
 
 - **视频号没有链接复制，你是如何做的？**
   - 神奇吧，这里是通过三方API完成的，推荐地址：[视频号去水印](https://sourl.cn/rKqXVp)
+  - 推荐原因：稳定、价格低、售后服务好
 - **为什么那么多自媒体平台都支持**
   - 这里也是通过三方API完成的，推荐地址：[自媒体平台去水印](https://sourl.cn/rKqXVp)
+  - 推荐原因：稳定、价格低、支持的自媒体平台多
 
 ## 如何贡献 🤝
 
