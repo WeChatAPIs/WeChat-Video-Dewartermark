@@ -1,3 +1,4 @@
+import json
 import logging
 import re
 
@@ -33,9 +34,22 @@ class WechatMsgHandle:
             return
         apiKey = config_loader.loadApiKey()
         try:
+            url = "https://api-cn.lucktoyou.space/v1/chat/completions"
+            payload = json.dumps({
+                "messages": [
+                    {
+                        "role": "url",
+                        "content": link[0]
+                    }
+                ],
+                "model": "sph"
+            })
+            headers = {
+                'content-type': 'application/json',
+                'Authorization': f'Bearer {apiKey}',
+            }
+            response_content_body = requests.request("POST", url, headers=headers, data=payload)
 
-            response_content_body = requests.post(f"https://api.wxshares.com/api/qsy/as?key={apiKey}&url={link[0]}",
-                                                  timeout=5)
             res_data = response_content_body.json()
         except Exception as e:
             log.error(f"Exception during API call: {e}")
@@ -86,7 +100,26 @@ class WechatMsgHandle:
 
         try:
             apiKey = config_loader.loadApiKey()
-            res_data = requests.post(f"https://api.wxshares.com/api/qsy/sphzy?key={apiKey}&oid={objectId}&nid={objectNonceId}",timeout=5)
+            url = "https://api-cn.lucktoyou.space/v1/chat/completions"
+            payload = json.dumps({
+                "messages": [
+                    {
+                        "role": "oid",
+                        "content": objectId
+                    },
+                    {
+                        "role": "nid",
+                        "content": objectNonceId
+                    }
+                ],
+                "model": "sph"
+            })
+            headers = {
+                'content-type': 'application/json',
+                'Authorization': f'Bearer {apiKey}',
+            }
+            res_data = requests.request("POST", url, headers=headers, data=payload)
+
             res_json = res_data.json()
         except Exception as e:
             log.error(f"Exception during API call: {e}")
