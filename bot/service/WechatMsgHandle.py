@@ -42,7 +42,7 @@ class WechatMsgHandle:
                         "content": link[0]
                     }
                 ],
-                "model": "sph"
+                "model": "dsp"
             })
             headers = {
                 'content-type': 'application/json',
@@ -56,15 +56,15 @@ class WechatMsgHandle:
             SendMsgNativeApi.send_text_message_base(wechatId, fromWechatId
                                                     , "很抱歉解析失败了，可能是链接已经过期了", [])
             return
-        if res_data['code'] != 200:
+        if res_data['code'] != "200":
             SendMsgNativeApi.send_text_message_base(wechatId, fromWechatId
                                                     , "很抱歉解析失败了，可能是链接已经过期了", [])
-        title = res_data['data']['title']
-        url = res_data['data']['url']
-        photo = res_data['data']['photo']
+        title = res_data['data']['data']['title']
+        url = res_data['data']['data']['url']
+        photo = res_data['data']['data']['photo']
         picsList = []
-        if 'pics' in res_data['data']:
-            picsList = res_data['data']['pics']
+        if 'pics' in res_data['data']['data']:
+            picsList = res_data['data']['data']['pics']
 
         res_content = "标题：\n" + title + "\n\n" + "链接：\n" + url + "\n\n" + "图片：\n" + photo
 
@@ -72,7 +72,7 @@ class WechatMsgHandle:
             res_content = res_content + "\n" + "更多图片：\n" + "\n".join(picsList)
         SendMsgNativeApi.send_text_message_base(wechatId
                                                 , fromWechatId
-                                                , res_content
+                                           , res_content
                                                 , [])
         return
 
@@ -126,9 +126,9 @@ class WechatMsgHandle:
             SendMsgNativeApi.send_text_message_base(wechatId, fromWechatId
                                                     , "很抱歉解析失败了，可能是链接已经过期了", [])
             return
-        title = str(res_json['data']['title'])
-        url = str(res_json['data']['url'])
-        photo = str(res_json['data']['photo'])
+        title = str(res_json['data']['data']['title'])
+        url = str(res_json['data']['data']['url'])
+        photo = str(res_json['data']['data']['photo'])
         res_content = "标题：\n" + title + "\n\n" + "链接：\n" + url + "\n\n" + "图片：\n" + photo
         SendMsgNativeApi.send_text_message_base(wechatId
                                                 , groupId if groupId else senderUserName
