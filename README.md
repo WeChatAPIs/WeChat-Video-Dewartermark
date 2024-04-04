@@ -18,11 +18,6 @@
 
 ## 安装 🔧
 
-### 准备工作
-
-- 确保Python 3.11已安装
-- [API启动器来源](https://github.com/kawika-git/wechatAPI)
-
 ### 启动程序
 
 1. 克隆仓库到本地：`git clone https://github.com/kawika-git/WeChat-Video-Dewartermark.git`
@@ -32,10 +27,6 @@
 5. 修改配置文件：`.env` 文件中填写相关配置信息
 6. 运行程序：`python app.py`
 
-## 依赖 📦
-
-- [API启动器来源](https://github.com/kawika-git/wechatAPI)
-
 ## 常见问题
 
 - **视频号没有链接复制，你是如何做的？**
@@ -44,6 +35,9 @@
 - **为什么那么多自媒体平台都支持**
   - 这里也是通过三方API完成的，推荐地址：[自媒体平台去水印](https://sourl.cn/rKqXVp)
   - 推荐原因：稳定、价格低、支持的自媒体平台多
+- **你是怎么监控微信消息的？**
+  - 这里也是通过三方API完成的，推荐地址：[API启动器来源](https://github.com/kawika-git/wechatAPI)
+  - 推荐原因：稳定、价格低、不封号
 
 ## 如何贡献 🤝
 
