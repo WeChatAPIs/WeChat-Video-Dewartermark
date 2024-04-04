@@ -1,0 +1,9 @@
+/.idea/
+/*/*.log*
+*.iml
+env_wechat.json
+Test*
+*.db
+*.log
+/gen_image/*
+/*/log/*
