@@ -36,7 +36,7 @@
   - 这里也是通过三方API完成的，推荐地址：[自媒体平台去水印](https://sourl.cn/nhdDPM)
   - 推荐原因：稳定、价格低、支持的自媒体平台多
 - **你是怎么监控微信消息的？**
-  - 这里也是通过三方API完成的，推荐地址：[API启动器来源](https://github.com/WeChatAPIs/WeChatAPI)
+  - 这里也是通过三方API完成的，推荐地址：[API启动器来源](https://WeChatSDK.com)
   - 推荐原因：稳定、价格低、不封号
 
 ## 如何贡献 🤝
